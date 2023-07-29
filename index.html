@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="bootstrap-5.3.0-alpha3-dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/90aa049a42.js"></script>
+  </head>
+  <body>
+    <div class="checkout-sidebar" id="checkout-sidebar">
+      <div class="container-fluid text-light p-3">
+        <h3><i class="fa-solid fa-x"></i></h3>
+        <h2 class="mt-2 text-center">Shopping cart</h2>
+        <div class="row g-3 mt-3">
+          <div class="col-3">Product</div>
+          <div class="col-3">Title</div>
+          <div class="col-3">Price</div>
+          <div class="col-3">Quantity</div>
+          <hr style="display: block; background-color: #fff; height: 2px" />
+        </div>
+        <div class="cart-items"></div>
+      </div>
+    </div>
+    <div class="menu-sidebar"></div>
+    <div class="fixed-header-sec d-flex flex-column">
+      <div class="fixed-header">
+        <div
+          class="header-menu d-flex justify-content-between align-items-center p-2 pt-0 pb-0"
+        >
+          <div class="logo text-light"><i>ShopLet</i></div>
+          <div class="menu">
+            <nav class="nav">
+              <a class="nav-link text-light" href="#">Home</a>
+              <a class="nav-link text-light" href="#">Products</a>
+              <a class="nav-link text-light" href="#">About</a>
+              <a class="nav-link text-light" href="#">News</a>
+              <a class="nav-link text-light" href="#">Shop</a>
+              <a class="nav-link text-light" href="#">Contact</a>
+              <!-- <a class="nav-link text-light" href="#">Dashboard</a> -->
+            </nav>
+          </div>
+          <div class="sign-in text-light">
+            Sign in <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <div class="container mt-2">
+          <div
+            class="logo-search-cart-sec d-flex justify-content-between align-items-center"
+          >
+            <div class="search-box" style="width: 100%; padding: 0 2rem 0 2rem">
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search products"
+                  aria-describedby="button-addon2"
+                />
+                <button
+                  class="btn btn-outline-secondary bg-tertiary text-light"
+                  type="button"
+                  id="button-addon2"
+                >
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </div>
+            <div class="cart-display text-light">
+              <h3>
+                <i class="fa-solid fa-cart-shopping" id="cart-display"></i>
+              </h3>
+              <div
+                class="cart-number d-flex justify-content-center align-items-center"
+                style="cursor: default"
+              >
+                0
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="categories-sec">
+        <div class="container d-flex justify-content-start align-items-center">
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Product
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All products</a></li>
+              <li><a class="dropdown-item" href="#">Shoes</a></li>
+              <li><a class="dropdown-item" href="#">Hats</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Category
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Brand
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Size
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Color
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              style="background: none; border: none"
+            >
+              Price Range
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sort-box d-flex justify-content-end p-3">
+      <div class="p-1 h6">Sort by:</div>
+      <select name="" id="">
+        <option value="name">Name</option>
+        <option value="price">Price</option>
+        <option value="time">Time Updated</option>
+      </select>
+    </div>
+    <div class="container mb-5">
+      <div class="products-sec row g-3"></div>
+    </div>
+    <script src="main.js" type="module"></script>
+    <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
