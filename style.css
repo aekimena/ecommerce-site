@@ -10,12 +10,12 @@ body {
 }
 
 .fixed-header {
-    background-color: rgb(46, 46, 53);
+    /* background-color: rgb(46, 46, 53); */
     padding: .5rem;
 }
 
 .categories-sec {
-    background-color: rgb(46, 46, 53);
+    /* background-color: rgb(46, 46, 53); */
     padding: .5rem;
 }
 
@@ -35,10 +35,11 @@ select {
     top: 0;
     right: 0;
     height: 100%;
-    width: 500px;
+    width: 0px;
     background-color: rgb(33, 33, 38);
     z-index: 20;
     transition: 0.3s;
+    overflow-y: scroll;
 }
 
 .menu-sidebar {
@@ -71,4 +72,16 @@ select {
     height: 25px;
     width: 40px;
     padding: .3rem;
+}
+
+.checkout-sec {
+    position:sticky;
+    top: 100%;
+    width: 100%;
+    padding: .5rem;
+    z-index: 20;
+}
+
+.trash{
+    cursor: default;
 }
