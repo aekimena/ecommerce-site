@@ -15,7 +15,7 @@
   <body>
     <div class="checkout-sidebar" id="checkout-sidebar">
       <div class="container-fluid text-light p-3">
-        <h3><i class="fa-solid fa-x"></i></h3>
+        <h3><i class="hide-cart fa-solid fa-x"></i></h3>
         <h2 class="mt-2 text-center">Shopping cart</h2>
         <div class="row g-3 mt-3">
           <div class="col-3">Product</div>
@@ -26,10 +26,21 @@
         </div>
         <div class="cart-items"></div>
       </div>
+      <div class="checkout-sec bg-dark-subtle">
+        <div
+          class="total-box d-flex justify-content-between align-items-center"
+        >
+          <div class="h4">Total:</div>
+          <div class="h2 total">$0</div>
+        </div>
+        <div class="checkoutbtn d-grid mt-3">
+          <button class="btn btn-dark p-3">CHECKOUT</button>
+        </div>
+      </div>
     </div>
     <div class="menu-sidebar"></div>
     <div class="fixed-header-sec d-flex flex-column">
-      <div class="fixed-header">
+      <div class="fixed-header bg-dark">
         <div
           class="header-menu d-flex justify-content-between align-items-center p-2 pt-0 pb-0"
         >
@@ -62,11 +73,13 @@
                   aria-describedby="button-addon2"
                 />
                 <button
-                  class="btn btn-outline-secondary bg-tertiary text-light"
+                  class="btn btn-outline-light text-light"
                   type="button"
                   id="button-addon2"
                 >
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <h5>
+                    <i class="fa-solid fa-magnifying-glass text-light"></i>
+                  </h5>
                 </button>
               </div>
             </div>
@@ -84,7 +97,7 @@
           </div>
         </div>
       </div>
-      <div class="categories-sec">
+      <div class="categories-sec bg-dark">
         <div class="container d-flex justify-content-start align-items-center">
           <div class="dropdown">
             <button
