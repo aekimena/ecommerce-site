@@ -1,53 +1,200 @@
-import { products } from "./products.js";
+// import { products } from "./products.js";
+
+
+let products = [
+  {
+      id: 1,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 19,
+      image: 'images/femalebag6.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'women',
+      categoryAll: 'all',
+      product: 'bags',
+      stock: 5
+  },
+  {
+      id: 2,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 1,
+      image: 'images/malebag73.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'men',
+      categoryAll: 'all',
+      product: 'bags',
+      stock: 5
+  },
+  {
+      id: 3,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 5,
+      image: 'images/femalecap37.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'women',
+      categoryAll: 'all',
+      product: 'hats and caps',
+      stock: 5
+  },
+  {
+      id: 4,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 2,
+      image: 'images/malecap4j.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'men',
+      categoryAll: 'all',
+      product: 'hats and caps',
+      stock: 5
+  },
+  {
+      id: 5,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 23,
+      image: 'images/femaletrouser25.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'women',
+      categoryAll: 'all',
+      product: 'trousers',
+      stock: 5
+  },
+  {
+      id: 6,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 7,
+      image: 'images/maletrouser7.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'men',
+      categoryAll: 'all',
+      product: 'trousers',
+      stock: 5
+  },
+  {
+      id: 7,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 34,
+      image: 'images/femaleShoe2.jpg',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'women',
+      categoryAll: 'all',
+      product: 'shoes',
+      stock: 5
+  },
+  {
+      id: 8,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 11,
+      image: 'images/maleShoe3.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'men',
+      categoryAll: 'all',
+      product: 'shoes',
+      stock: 5
+  },
+  {
+      id: 9,
+      nameOfProduct: 'Lorem Ipsum product',
+      price: 19,
+      image: 'images/femaletop1b.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'women',
+      categoryAll: 'all',
+      product: 'tops',
+      stock: 5
+  },
+  {
+      id: 10,
+      nameOfProduct: 'aLorem Ipsum product',
+      price: 19,
+      image: 'images/maletop18.webp',
+      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
+      timeUpdated: '',
+      category: 'men',
+      categoryAll: 'all',
+      product: 'tops',
+      stock: 5
+  },
+]
 
 let productDisplay = document.querySelector('.products-sec');
 let cart = [];
 let cartNumber = document.querySelector('.cart-number');
+let added = '<i class="fa-solid fa-cart-shopping"></i> Added';
+let notAdded = '<i class="fa-solid fa-cart-shopping"></i> Add To Cart';
+let filterProduct = products;
+let newFilterProduct = products;
 
-function displayProducts(){
-    products.forEach(product => {
+function displayProducts(productArray){
+  // let cartItems = document.querySelector('.cart-items');
+  while (productDisplay.firstChild){
+    productDisplay.removeChild(productDisplay.firstChild);
+  }
+  productArray.forEach(product => {
       let productsToShow = document.createElement('div');
-      productsToShow.classList.add('product', 'col-xl-3', 'col-lg-3', 'col-md-4', 'col-sm-6', 'col-xs-12');
-      productsToShow.innerHTML = `<div class="card">
-          <img src="${product.image}" class="card-img-top" alt="..." />
+      productsToShow.classList.add('product', 'col-xl-3', 'col-lg-3', 'col-md-6', 'col-sm-6', 'col-xs-6');
+      productsToShow.innerHTML = `<div class="card" style="height: 100%;">
+          <img src="${product.image}" class="card-img-top p-3" alt="..."/>
+          <hr>
           <div class="card-body">
             <h5 class="card-title">${product.nameOfProduct}</h5>
-            <p class="h4 card-text">$${product.price}</p>
-            <a href="#" class="addCartBtn btn btn-primary">Add to cart</a>
+            <p class="h4 card-text">$${product.price.toFixed(2)}</p>
+            <button  class="addCartBtn btn btn-dark">${notAdded}</button>
           </div>
         </div>`;
       productDisplay.appendChild(productsToShow);
     })
+    addToCart(productArray);
 }
-displayProducts();
+displayProducts(products);
 
-function addToCart(){
+function addToCart(productArray){
   let addCartBtn = document.querySelectorAll('.addCartBtn');
   let btnArray = Array.from(addCartBtn);
+  for(let i of productArray){
+    for(let j of cart){
+      if(i.id == j.id){
+        addCartBtn[productArray.indexOf(i)].innerHTML = added;
+      }
+    }
+  }
   addCartBtn.forEach(btn => {
     btn.addEventListener('click', () =>{
-      if(btn.innerHTML == 'Added'){
-        cart.splice(cart.indexOf(btn), 1)
+      console.log('yes')
+      if(btn.innerHTML == added){
+        for(let i of cart){
+          if(i.id === productArray[btnArray.indexOf(btn)].id){
+            cart.splice(cart.indexOf(i), 1)
+          }
+        }
+        // cart.splice(cart.indexOf(btn), 1)
         cartNumber.innerHTML = cart.length;
-        btn.innerHTML = 'Add to cart';
+        btn.innerHTML = notAdded;
         updateCartItems();
       }else {
-        cart.push(products[btnArray.indexOf(btn)]);
+        cart.push(productArray[btnArray.indexOf(btn)]);
         cartNumber.innerHTML = cart.length;
-        btn.innerHTML = 'Added';
+        btn.innerHTML = added;
         updateCartItems();
       }
     })
   })
 }
-addToCart();
+// addToCart();
 
 function showCart(){
   document.addEventListener('click', (event) => {
     let cartSideBar = document.getElementById('checkout-sidebar');
     let cartIcon = document.getElementById('cart-display');
     if(event.target === cartIcon){
-      cartSideBar.style.width = cartSideBar.style.width === '0px' ? '500px' : '0px';
+      cartSideBar.style.width = cartSideBar.style.width === '0px' ? '90%' : '0px';
     } else {
       if(!cartSideBar.contains(event.target)){
         cartSideBar.style.width = '0px';
@@ -72,24 +219,24 @@ function updateCartItems(){
     cartsToShow.classList.add('row', 'g-3', 'd-flex', 'align-items-center');
     cartsToShow.innerHTML = `<div class="col-3 cart-images">
     <img src="${cart.image}" class="img-fluid" alt="" />
-    <p class="h6 trash">Remove <i class="fa-solid fa-trash"></i></p>
+    <p class="h6 trash pt-2">Remove <i class="fa-solid fa-trash"></i></p>
   </div>
   <div class="col-3 cart-titles">
     <p class="h5">${cart.nameOfProduct}</p>
   </div>
   <div class="col-3">
-    <p class="h5 cart-price">$${cart.price}</p>
+    <p class="h5 cart-price">$${cart.price.toFixed(2)}</p>
   </div>
   <div
-    class="col-3 d-flex justify-content-between align-items-center"
+    class="col-3 d-flex gap-2 justify-content-center align-items-center"
   >
-    <h5><i class="addItemBtn fa-solid fa-plus"></i></h5>
+    <button class="addItemBtn"><h5><i class="fa-solid fa-plus"></i></h5></button>
     <div
       class="quantity-display text-dark d-flex justify-content-center align-items-center"
     >
       1
     </div>
-    <h5><i class="minusItemBtn fa-solid fa-minus"></i></h5>
+    <button class="minusItemBtn"><h5><i class="fa-solid fa-minus"></i></h5></button>
   </div>
   <hr style="display: block; background-color: #fff; height: 1px" />`;
     cartItems.appendChild(cartsToShow);
@@ -110,7 +257,7 @@ function removecart(){
       if(event.target === trash){
         for(let i of products){
           if(i.id === cart[trashArray.indexOf(trash)].id){
-            addCartBtn[products.indexOf(i)].innerHTML = 'Add to cart';
+            addCartBtn[products.indexOf(i)].innerHTML = notAdded;
           }
         }
         cart.splice(trashArray.indexOf(trash), 1);
@@ -135,12 +282,15 @@ function addminus(){
     let x = cart[cartArray.indexOf(addIcon)].price;
     addIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray.indexOf(addIcon)].textContent);
-      count++;
-      cart[cartArray.indexOf(addIcon)].price = cart[cartArray.indexOf(addIcon)].price + x;
-      // price[cartArray.indexOf(addIcon)].innerHTML = `$${parseInt(price[cartArray.indexOf(addIcon)].textContent) + cart[cartArray.indexOf(addIcon)].price}`;
-      price[cartArray.indexOf(addIcon)].innerHTML = `$${cart[cartArray.indexOf(addIcon)].price}`;
-      quantityDisplay[cartArray.indexOf(addIcon)].textContent = count;
-      displayTotal();
+      if(count == cart[cartArray.indexOf(addIcon)].stock){
+        addIcon.classList.add('disabled')
+      } else {
+        count++;
+        cart[cartArray.indexOf(addIcon)].price = cart[cartArray.indexOf(addIcon)].price + x;
+        price[cartArray.indexOf(addIcon)].innerHTML = `$${cart[cartArray.indexOf(addIcon)].price.toFixed(2)}`;
+        quantityDisplay[cartArray.indexOf(addIcon)].textContent = count;
+        displayTotal();
+      }
     })
   })
 
@@ -148,22 +298,95 @@ function addminus(){
     let y = cart[cartArray2.indexOf(minusIcon)].price;
     minusIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray2.indexOf(minusIcon)].textContent);
-      count--;
-      cart[cartArray2.indexOf(minusIcon)].price = cart[cartArray2.indexOf(minusIcon)].price - y;
-      // price[cartArray2.indexOf(minusIcon)].textContent = `$${parseInt(price[cartArray2.indexOf(minusIcon)].textContent) - cart[cartArray2.indexOf(minusIcon)].price}`;
-      price[cartArray2.indexOf(minusIcon)].innerHTML = `$${cart[cartArray2.indexOf(minusIcon)].price}`;
-      quantityDisplay[cartArray2.indexOf(minusIcon)].textContent = count;
-      displayTotal();
+      if(count == 1){
+        minusIcon.classList.add('disabled')
+      } else {
+        count--;
+        cart[cartArray2.indexOf(minusIcon)].price = cart[cartArray2.indexOf(minusIcon)].price - y;
+        price[cartArray2.indexOf(minusIcon)].innerHTML = `$${cart[cartArray2.indexOf(minusIcon)].price.toFixed(2)}`;
+        quantityDisplay[cartArray2.indexOf(minusIcon)].textContent = count;
+        displayTotal();
+      }
     })
   })
-
-
 }
+
 
 function displayTotal(){
   let allPrice = document.querySelectorAll('.cart-price');
   let priceArray = Array.from(allPrice);
   priceArray = priceArray.map(x => x.innerHTML.slice(1)).map(y => parseInt(y));
   let sum = priceArray.reduce((x, y) => x + y, 0);
-  document.querySelector('.total').innerHTML = `$${sum}`;
+  document.querySelector('.total').innerHTML = `$${sum.toFixed(2)}`;
 }
+
+let categoryArray = [''];
+let productArray = [''];
+
+function filter(){
+  let productBtns = document.querySelectorAll('.filter-btns button');
+  let filterBtns = document.querySelectorAll('.filterli li');
+  let allFilter = true;
+  let allCategory = true;
+  productBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('active');
+      let sibllings = Array.from(btn.parentNode.children);
+      let filteredSiblings = sibllings.filter((element) => {
+          return element !== btn;
+      })
+      filteredSiblings.forEach(unwantedList => {
+          unwantedList.classList.remove('active');
+      })
+      if(btn.innerHTML.toLowerCase() == 'all' && allFilter){
+        allCategory = true;
+        displayProducts(products);
+      } else if(btn.innerHTML.toLowerCase() !== 'all' && !allFilter) {
+        allCategory = false;
+        productArray[0] = btn.innerHTML.toLowerCase();
+        displayProducts(products.filter(product => product.product == btn.innerHTML.toLowerCase() && product.category == categoryArray[0]));
+      }
+       else if(btn.innerHTML.toLowerCase() !== 'all' && allFilter) {
+        allCategory = false;
+        productArray[0] = btn.innerHTML.toLowerCase();
+        displayProducts(products.filter(product => product.product == btn.innerHTML.toLowerCase()));
+      }else if(btn.innerHTML.toLowerCase() == 'all' && !allFilter){
+        allCategory = true;
+        displayProducts(products.filter(product => product.category == categoryArray[0]));
+      }
+      sortArray = products;
+    })
+  })
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.add('active');
+      let sibllings = Array.from(btn.parentNode.children);
+      let filteredSiblings = sibllings.filter((element) => {
+          return element !== btn;
+      })
+      filteredSiblings.forEach(unwantedList => {
+          unwantedList.classList.remove('active');
+      })
+      if(btn.innerHTML.toLowerCase() == 'all' && allCategory){
+        allFilter = true;
+        displayProducts(products);
+      } else if(btn.innerHTML.toLowerCase() !== 'all' && !allCategory) {
+        allFilter = false;
+        categoryArray[0] = btn.innerHTML.toLowerCase();
+        displayProducts(products.filter(product => product.category == btn.innerHTML.toLowerCase() && product.product == productArray[0]));
+      }
+      else if(btn.innerHTML.toLowerCase() !== 'all' && allCategory){
+        allFilter = false;
+        categoryArray[0] = btn.innerHTML.toLowerCase();
+        displayProducts(products.filter(product => product.category == btn.innerHTML.toLowerCase()));
+      } else if(btn.innerHTML.toLowerCase() == 'all' && !allCategory){
+        allFilter = true;
+        displayProducts(products.filter(product => product.product == productArray[0]));
+      }
+      sortArray = products;
+    })
+  })
+}
+
+filter();
