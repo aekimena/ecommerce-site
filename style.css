@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+
 body {
     background-color: whitesmoke;
 }
@@ -17,11 +19,19 @@ body {
 .categories-sec {
     /* background-color: rgb(46, 46, 53); */
     padding: .5rem;
+    height: auto;
 }
 
 /* .products-sec {
     padding-top: calc();
 } */
+
+.logo {
+    font-family: 'Homemade Apple', cursive;
+    padding-left: 1rem;
+    /* font-style: italic; */
+    /* font-size: 2.5rem; */
+}
 
 select {
     width: 150px; 
@@ -36,7 +46,8 @@ select {
     right: 0;
     height: 100%;
     width: 0px;
-    background-color: rgb(33, 33, 38);
+    box-shadow: 0px 10px 10px #000000a7;
+    /* background-color: rgb(33, 33, 38); */
     z-index: 20;
     transition: 0.3s;
     overflow-y: scroll;
@@ -67,8 +78,15 @@ select {
     right: -15px;
 }
 
+.addItemBtn , .minusItemBtn {
+    background: none;
+    border: none;
+    outline: none;
+}
+
 .quantity-display {
     background-color: #fff;
+    border: 1px solid #000;
     height: 25px;
     width: 40px;
     padding: .3rem;
@@ -84,4 +102,18 @@ select {
 
 .trash{
     cursor: default;
+}
+
+.active-link {
+    border-bottom: 2px solid #007bff;
+}
+
+.cart-images img {
+    width: 100px;
+}
+
+.product img {
+    width: 155px;
+    display: block;
+    margin: 0 auto;
 }
