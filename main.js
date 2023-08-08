@@ -112,7 +112,7 @@ let products = [
   },
   {
       id: 10,
-      nameOfProduct: 'aLorem Ipsum product',
+      nameOfProduct: 'Lorem Ipsum product',
       price: 19,
       image: 'images/maletop18.webp',
       discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
@@ -217,26 +217,26 @@ function updateCartItems(){
   cart.forEach(cart => {
     let cartsToShow = document.createElement('div');
     cartsToShow.classList.add('row', 'g-3', 'd-flex', 'align-items-center');
-    cartsToShow.innerHTML = `<div class="col-3 cart-images">
+    cartsToShow.innerHTML = `<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-images">
     <img src="${cart.image}" class="img-fluid" alt="" />
     <p class="h6 trash pt-2">Remove <i class="fa-solid fa-trash"></i></p>
   </div>
-  <div class="col-3 cart-titles">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-titles">
     <p class="h5">${cart.nameOfProduct}</p>
   </div>
-  <div class="col-3">
+  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
     <p class="h5 cart-price">$${cart.price.toFixed(2)}</p>
   </div>
   <div
-    class="col-3 d-flex gap-2 justify-content-center align-items-center"
+    class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 d-flex gap-2  align-items-center"
   >
-    <button class="addItemBtn"><h5><i class="fa-solid fa-plus"></i></h5></button>
+    <button class="addItemBtn"><h4><i class="fa-solid fa-plus"></i></h4></button>
     <div
-      class="quantity-display text-dark d-flex justify-content-center align-items-center"
+      class="quantity-display text-dark d-flex justify-content-center align-items-center h4"
     >
       1
     </div>
-    <button class="minusItemBtn"><h5><i class="fa-solid fa-minus"></i></h5></button>
+    <button class="minusItemBtn"><h4><i class="fa-solid fa-minus"></i></h4></button>
   </div>
   <hr style="display: block; background-color: #fff; height: 1px" />`;
     cartItems.appendChild(cartsToShow);
@@ -390,3 +390,28 @@ function filter(){
 }
 
 filter();
+
+const searchBox = document.querySelector('.search-field');
+
+function searchProducts(){
+  searchBox.addEventListener('focus', () => {
+    document.addEventListener('keyup', checkKeyPressed)
+  });
+
+  document.querySelector('.search-btn').addEventListener('click', () => {
+    checkKeyPressed();
+  })
+}
+searchProducts();
+
+function checkKeyPressed(event){
+    if(event.keyCode){
+      const target = searchBox.value.toLowerCase();
+
+      displayProducts(products.filter(product => product.nameOfProduct.toLowerCase().includes(target)))
+        
+      if(target.length == 0){
+        displayProducts(products.filter(product => product == product))
+      }
+    }
+}
