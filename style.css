@@ -26,6 +26,33 @@ body {
     padding-top: calc();
 } */
 
+.all-container {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+
+    /* padding: 10px; */
+}
+
+
+.all-container::-webkit-scrollbar {
+    height: 0;
+}
+
+/* .all-container::-webkit-scrollbar-track {
+    background: #fff;
+}
+
+.all-container::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 2rem;
+} */
+
+/* .filter-btns {
+   
+} */
+
 .logo {
     font-family: 'Homemade Apple', cursive;
     padding-left: 1rem;
@@ -87,7 +114,7 @@ select {
 .quantity-display {
     background-color: #fff;
     border: 1px solid #000;
-    height: 25px;
+    height: 30px;
     width: 40px;
     padding: .3rem;
 }
@@ -98,14 +125,16 @@ select {
     width: 100%;
     padding: .5rem;
     z-index: 20;
-}
 
+}
 .trash{
     cursor: default;
 }
 
 .active-link {
-    border-bottom: 2px solid #007bff;
+    /* border-bottom: 2px solid #007bff; */
+    /* text-decoration: underline #007bff; */
+    color: #007bff;
 }
 
 .cart-images img {
@@ -116,4 +145,18 @@ select {
     width: 155px;
     display: block;
     margin: 0 auto;
+}
+
+
+@media  screen and (max-width: 768px) {
+    .header-menu .menu {
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width: 575px) {
+    .checkout-sidebar .cart-labels {
+        display: none;
+    }
 }
