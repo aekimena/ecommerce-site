@@ -17,7 +17,7 @@
       <div class="container-fluid text-dark p-3">
         <h3><i class="hide-cart fa-solid fa-x"></i></h3>
         <h2 class="mt-2 text-center">Shopping cart</h2>
-        <div class="row g-3 mt-3">
+        <div class="row g-3 mt-3 cart-labels">
           <div class="col-3">Product</div>
           <div class="col-3">Title</div>
           <div class="col-3">Price</div>
@@ -48,16 +48,24 @@
           <div class="menu">
             <nav class="nav">
               <a class="nav-link text-light" href="#">Home</a>
-              <a class="nav-link text-light active-link" href="#">Products</a>
+              <a class="nav-link active-link" href="#">Products</a>
               <a class="nav-link text-light" href="#">About</a>
               <a class="nav-link text-light" href="#">News</a>
               <a class="nav-link text-light" href="#">Contact</a>
               <!-- <a class="nav-link text-light" href="#">Dashboard</a> -->
             </nav>
           </div>
-          <div class="sign-in text-light">
-            <p>Sign in <i class="fa-solid fa-user"></i></p>
+          <div
+            class="menu-bar btn"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"
+          >
+            <h3><i class="fa-solid fa-bars text-light"></i></h3>
           </div>
+          <!-- <div class="sign-in text-light">
+            <p>Sign in <i class="fa-solid fa-user"></i></p>
+          </div> -->
         </div>
         <div class="container mt-3">
           <div
@@ -67,7 +75,7 @@
               <div class="input-group">
                 <input
                   type="text"
-                  class="form-control"
+                  class="form-control search-field"
                   placeholder="Search products"
                   aria-describedby="button-addon2"
                 />
@@ -77,7 +85,9 @@
                   id="button-addon2"
                 >
                   <h5>
-                    <i class="fa-solid fa-magnifying-glass text-dark"></i>
+                    <i
+                      class="fa-solid fa-magnifying-glass text-dark search-btn"
+                    ></i>
                   </h5>
                 </button>
               </div>
@@ -98,15 +108,19 @@
       </div>
     </div>
 
-    <div class="filter-btns d-flex justify-content-center gap-3 m-3">
-      <button class="btn btn-outline-dark flex-shrink-0 active">All</button>
-      <button class="btn btn-outline-dark flex-shrink-0">Tops</button>
-      <button class="btn btn-outline-dark flex-shrink-0">Trousers</button>
-      <button class="btn btn-outline-dark flex-shrink-0">Bags</button>
-      <button class="btn btn-outline-dark flex-shrink-0">Shoes</button>
-      <button class="btn btn-outline-dark flex-shrink-0">Hats and Caps</button>
+    <div class="all-container">
+      <div class="filter-btns d-flex justify-content-end gap-3 m-3">
+        <button class="btn btn-outline-dark flex-shrink-0 active">All</button>
+        <button class="btn btn-outline-dark flex-shrink-0">Tops</button>
+        <button class="btn btn-outline-dark flex-shrink-0">Trousers</button>
+        <button class="btn btn-outline-dark flex-shrink-0">Bags</button>
+        <button class="btn btn-outline-dark flex-shrink-0">Shoes</button>
+        <button class="btn btn-outline-dark flex-shrink-0">
+          Hats and Caps
+        </button>
+      </div>
     </div>
-    <div class="d-flex justify-content-start gap-2 container-lg">
+    <div class="d-flex justify-content-start gap-2 container-fluid">
       <div class="filter-box d-flex">
         <div class="dropdown">
           <button
@@ -146,6 +160,33 @@
 
     <div class="container-lg mb-5 mt-3">
       <div class="products-sec row g-3"></div>
+    </div>
+
+    <div
+      class="offcanvas offcanvas-start"
+      data-bs-scroll="true"
+      tabindex="-1"
+      id="offcanvasWithBothOptions"
+      aria-labelledby="offcanvasWithBothOptionsLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
+          <div class="logo text-dark h2">Shop.io</div>
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <a class="nav-link text-dark p-3" href="#">Home</a>
+        <a class="nav-link active-link p-3" href="#">Products</a>
+        <a class="nav-link text-dark p-3" href="#">About</a>
+        <a class="nav-link text-dark p-3" href="#">News</a>
+        <a class="nav-link text-dark p-3" href="#">Contact</a>
+      </div>
     </div>
     <script src="main.js" type="module"></script>
     <script src="bootstrap-5.3.0-alpha3-dist/js/bootstrap.bundle.js"></script>
