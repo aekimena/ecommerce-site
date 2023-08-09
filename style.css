@@ -31,8 +31,6 @@ body {
     overflow: hidden;
     overflow-x: auto;
     scroll-behavior: smooth;
-
-    /* padding: 10px; */
 }
 
 
@@ -47,10 +45,6 @@ body {
 .all-container::-webkit-scrollbar-thumb {
     background: #000;
     border-radius: 2rem;
-} */
-
-/* .filter-btns {
-   
 } */
 
 .logo {
@@ -148,9 +142,17 @@ select {
 }
 
 
+.menu-bar, .offcanvas {
+    display: none;
+}
+
 @media  screen and (max-width: 768px) {
     .header-menu .menu {
         display: none;
+    }
+
+    .menu-bar, .offcanvas {
+        display: block;
     }
     
 }
