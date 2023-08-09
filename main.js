@@ -1,128 +1,6 @@
-// import { products } from "./products.js";
+import { Realproducts } from "./products.js";
 
-
-let products = [
-  {
-      id: 1,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 19,
-      image: 'images/femalebag6.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'women',
-      categoryAll: 'all',
-      product: 'bags',
-      stock: 5
-  },
-  {
-      id: 2,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 1,
-      image: 'images/malebag73.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'men',
-      categoryAll: 'all',
-      product: 'bags',
-      stock: 5
-  },
-  {
-      id: 3,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 5,
-      image: 'images/femalecap37.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'women',
-      categoryAll: 'all',
-      product: 'hats and caps',
-      stock: 5
-  },
-  {
-      id: 4,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 2,
-      image: 'images/malecap4j.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'men',
-      categoryAll: 'all',
-      product: 'hats and caps',
-      stock: 5
-  },
-  {
-      id: 5,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 23,
-      image: 'images/femaletrouser25.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'women',
-      categoryAll: 'all',
-      product: 'trousers',
-      stock: 5
-  },
-  {
-      id: 6,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 7,
-      image: 'images/maletrouser7.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'men',
-      categoryAll: 'all',
-      product: 'trousers',
-      stock: 5
-  },
-  {
-      id: 7,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 34,
-      image: 'images/femaleShoe2.jpg',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'women',
-      categoryAll: 'all',
-      product: 'shoes',
-      stock: 5
-  },
-  {
-      id: 8,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 11,
-      image: 'images/maleShoe3.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'men',
-      categoryAll: 'all',
-      product: 'shoes',
-      stock: 5
-  },
-  {
-      id: 9,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 19,
-      image: 'images/femaletop1b.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'women',
-      categoryAll: 'all',
-      product: 'tops',
-      stock: 5
-  },
-  {
-      id: 10,
-      nameOfProduct: 'Lorem Ipsum product',
-      price: 19,
-      image: 'images/maletop18.webp',
-      discription: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem amet fugit sequi ullam facilis cum reprehenderit dicta incidunt accusantium ipsa iste perferendis, mollitia dolorem ab architecto. Laborum recusandae tempore dicta!',
-      timeUpdated: '',
-      category: 'men',
-      categoryAll: 'all',
-      product: 'tops',
-      stock: 5
-  },
-]
+let products = Realproducts;
 
 let productDisplay = document.querySelector('.products-sec');
 let cart = [];
@@ -222,7 +100,7 @@ function updateCartItems(){
     <p class="h6 trash pt-2">Remove <i class="fa-solid fa-trash"></i></p>
   </div>
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12 cart-titles">
-    <p class="h5">${cart.nameOfProduct}</p>
+    <p class="h6">${cart.nameOfProduct}</p>
   </div>
   <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
     <p class="h5 cart-price">$${cart.price.toFixed(2)}</p>
