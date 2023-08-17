@@ -9,7 +9,9 @@ export let Realproducts = [
         category: 'women',
         categoryAll: 'all',
         product: 'bags',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 19
     },
     {
         id: 2,
@@ -21,7 +23,9 @@ export let Realproducts = [
         category: 'men',
         categoryAll: 'all',
         product: 'bags',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 1
     },
     {
         id: 3,
@@ -33,7 +37,9 @@ export let Realproducts = [
         category: 'women',
         categoryAll: 'all',
         product: 'hats',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 5
     },
     {
         id: 4,
@@ -45,7 +51,9 @@ export let Realproducts = [
         category: 'women',
         categoryAll: 'all',
         product: 'trousers',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 2
     },
     {
         id: 6,
@@ -57,7 +65,9 @@ export let Realproducts = [
         category: 'men',
         categoryAll: 'all',
         product: 'trousers',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 7
     },
     {
         id: 7,
@@ -69,7 +79,9 @@ export let Realproducts = [
         category: 'women',
         categoryAll: 'all',
         product: 'shoes',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 34
     },
     {
         id: 8,
@@ -81,7 +93,9 @@ export let Realproducts = [
         category: 'men',
         categoryAll: 'all',
         product: 'shoes',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 11
     },
     {
         id: 9,
@@ -93,6 +107,8 @@ export let Realproducts = [
         category: 'women',
         categoryAll: 'all',
         product: 'tops',
-        stock: 5
+        stock: 5,
+        stockCount: 1,
+        defaultPrice: 19
     }
   ]
