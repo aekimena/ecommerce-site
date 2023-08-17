@@ -74,6 +74,10 @@ select {
     overflow-y: scroll;
 }
 
+.filter-btns button {
+    margin: 5px;
+}
+
 .menu-sidebar {
     position: fixed;
     top: 0;
