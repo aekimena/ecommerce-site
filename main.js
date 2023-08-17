@@ -54,6 +54,8 @@ function addToCart(productArray){
         }
         // cart.splice(cart.indexOf(btn), 1)
         cartNumber.innerHTML = cart.length;
+        productArray[btnArray.indexOf(btn)].price = productArray[btnArray.indexOf(btn)].defaultPrice;
+        productArray[btnArray.indexOf(btn)].stockCount = 1;
         btn.innerHTML = notAdded;
         updateCartItems();
       }else {
