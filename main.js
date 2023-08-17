@@ -112,7 +112,7 @@ function updateCartItems(){
     <div
       class="quantity-display text-dark d-flex justify-content-center align-items-center h4"
     >
-      1
+      ${cart.stockCount}
     </div>
     <button class="minusItemBtn"><h4><i class="fa-solid fa-minus"></i></h4></button>
   </div>
@@ -136,6 +136,8 @@ function removecart(){
         for(let i of products){
           if(i.id === cart[trashArray.indexOf(trash)].id){
             addCartBtn[products.indexOf(i)].innerHTML = notAdded;
+            products[products.indexOf(i)].stockCount = 1;
+            products[products.indexOf(i)].price = products[products.indexOf(i)].defaultPrice
           }
         }
         cart.splice(trashArray.indexOf(trash), 1);
@@ -160,10 +162,11 @@ function addminus(){
     let x = cart[cartArray.indexOf(addIcon)].price;
     addIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray.indexOf(addIcon)].textContent);
-      if(count == cart[cartArray.indexOf(addIcon)].stock){
+      if(count == cart[cartArray.indexOf(addIcon)].stock && cart[cartArray.indexOf(addIcon)].stockCount == cart[cartArray.indexOf(addIcon)].stock){
         addIcon.classList.add('disabled')
       } else {
         count++;
+        cart[cartArray.indexOf(addIcon)].stockCount++;
         cart[cartArray.indexOf(addIcon)].price = cart[cartArray.indexOf(addIcon)].price + x;
         price[cartArray.indexOf(addIcon)].innerHTML = `$${cart[cartArray.indexOf(addIcon)].price.toFixed(2)}`;
         quantityDisplay[cartArray.indexOf(addIcon)].textContent = count;
@@ -176,10 +179,11 @@ function addminus(){
     let y = cart[cartArray2.indexOf(minusIcon)].price;
     minusIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray2.indexOf(minusIcon)].textContent);
-      if(count == 1){
+      if(count == 1 && cart[cartArray2.indexOf(minusIcon)].stockCount == 1){
         minusIcon.classList.add('disabled')
       } else {
         count--;
+        cart[cartArray2.indexOf(minusIcon)].stockCount--;
         cart[cartArray2.indexOf(minusIcon)].price = cart[cartArray2.indexOf(minusIcon)].price - y;
         price[cartArray2.indexOf(minusIcon)].innerHTML = `$${cart[cartArray2.indexOf(minusIcon)].price.toFixed(2)}`;
         quantityDisplay[cartArray2.indexOf(minusIcon)].textContent = count;
