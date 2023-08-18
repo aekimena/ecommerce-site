@@ -161,7 +161,7 @@ function addminus(){
   let cartArray2 = Array.from(minusQIcon);
 
   addQIcon.forEach(addIcon => {
-    let x = cart[cartArray.indexOf(addIcon)].price;
+    let x = cart[cartArray.indexOf(addIcon)].defaultPrice;
     addIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray.indexOf(addIcon)].textContent);
       if(count == cart[cartArray.indexOf(addIcon)].stock && cart[cartArray.indexOf(addIcon)].stockCount == cart[cartArray.indexOf(addIcon)].stock){
@@ -178,7 +178,7 @@ function addminus(){
   })
 
   minusQIcon.forEach(minusIcon => {
-    let y = cart[cartArray2.indexOf(minusIcon)].price;
+    let y = cart[cartArray2.indexOf(minusIcon)].defaultPrice;
     minusIcon.addEventListener('click', () => {
       let count = parseInt(quantityDisplay[cartArray2.indexOf(minusIcon)].textContent);
       if(count == 1 && cart[cartArray2.indexOf(minusIcon)].stockCount == 1){
